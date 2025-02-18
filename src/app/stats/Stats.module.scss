@@ -26,44 +26,6 @@
     .content {
       margin-top: 24px;
 
-      .card {
-        border-radius: 16px;
-        background: $color_light;
-        padding: 16px;
-
-        .labelWrapper {
-          display: flex;
-          align-items: center;
-
-          .label {
-            font-size: 14px;
-            line-height: 140%;
-            color: $color_dark-500;
-          }
-
-          .tooltip {
-            align-self: flex-start;
-            margin-left: 4px;
-          }
-        }
-
-        .value {
-          margin-top: 4px;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 140%;
-
-          @include desktop {
-            font-size: 24px;
-          }
-        }
-
-
-
-      }
-
-
-
       .content_top {
         display: grid;
         grid-template-rows: repeat(3, 1fr);

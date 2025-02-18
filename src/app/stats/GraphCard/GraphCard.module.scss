@@ -1,9 +1,52 @@
 @import "../../../assets/styles/app";
 
 .graphCard {
+  position: relative;
   border-radius: 16px;
   background: $color_light;
   padding: 16px;
+
+  .info {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include desktop {
+      flex-direction: row;
+      align-items: unset;
+    }
+
+    .info_item {
+      display: flex;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-top: 4px;
+
+        @include desktop {
+          margin-top: 0;
+          margin-left: 29px;
+        }
+      }
+
+      & > div {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+
+      & > p {
+        font-size: 14px;
+        line-height: 140%;
+        color: $color_dark-500;
+        margin-left: 9px;
+      }
+    }
+  }
+
 
   .labelWrapper {
     display: flex;
@@ -30,6 +73,68 @@
     @include desktop {
       font-size: 24px;
     }
+  }
+
+  .wrapper {
+    //background: rgba(0,0,0,0.1);
+    margin-top: 32px;
+    padding-left: 48px;
+    padding-bottom: 24px;
+
+    .graphWrapper {
+      position: relative;
+      height: 192px;
+      //background: rgba(0,0,0,0.1);
+      border-top: 1px dashed $color_line-80;
+      border-bottom: 1px dashed $color_line-80;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        border-top: 1px dashed $color_line-80;
+      }
+
+      .y_value {
+        position: absolute;
+        left: -48px;
+        transform: translateY(50%);
+        font-size: 12px;
+        line-height: 140%;
+        color: $color_dark-500;
+      }
+
+      .x_values {
+        position: absolute;
+        left: 0;
+        bottom: -24px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 4px;
+        padding-right: 4px;
+
+        p {
+          font-size: 12px;
+          line-height: 140%;
+          color: $color_dark-500;
+        }
+      }
+
+      svg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+
+      }
+
+    }
+
   }
 
 }

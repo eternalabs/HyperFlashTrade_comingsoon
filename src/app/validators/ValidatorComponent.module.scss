@@ -1,0 +1,30 @@
+@import "../../assets/styles/app";
+
+.validatorComponent {
+  @include container;
+  position: relative;
+  width: 100%;
+  padding-top: 24px + 72px;
+  padding-bottom: 24px;
+
+  .inner {
+    @include inner;
+
+    h2.title {
+      @include h2;
+    }
+
+    .bottom {
+      margin-top: 24px;
+
+      @include desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+      }
+    }
+
+
+
+  }
+}

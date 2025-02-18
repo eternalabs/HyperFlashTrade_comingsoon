@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/app";
+
+.buttonCustom {
+  @include centerRow;
+  border-radius: 12px;
+  box-shadow: 0 16px 10px 0 rgba(28, 54, 36, 0.04), inset 0 1px 2px 0 rgba(248, 255, 251, 0.2);
+  background: $color_dark-1000;
+  border: 1px solid rgb(0, 0, 0, 0.5);
+  transition: 0.3s;
+  overflow: hidden;
+
+  &_mouseDown {
+    background: #034139;
+  }
+
+  &_light {
+    box-shadow: 0 8px 10px 0 rgba(28, 54, 36, 0.04), inset 0 4px 6px 0 rgba(248, 255, 251, 0.2);
+    background: #e4ffea;
+    border: 1px solid rgba(209, 255, 242, 1);
+  }
+
+  &_light_mouseDown {
+    background: #c3ffee;
+  }
+
+  .text {
+    p {
+      font-size: 16px;
+      line-height: 140%;
+      color: $color_light;
+    }
+
+    &_light {
+      p {
+        color: $color_dark-1000;
+      }
+    }
+  }
+}

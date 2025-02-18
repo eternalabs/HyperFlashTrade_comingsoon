@@ -1,0 +1,75 @@
+@import "../../../assets/styles/app";
+
+.settings {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    margin-top: 0;
+    flex-direction: row;
+  }
+
+  .btns {
+    border-radius: 10px;
+    background: $color_light;
+    padding: 2px;
+    display: grid;
+
+    .btn {
+      @include button;
+      @include centerRow;
+      height: 24px;
+      border-radius: 8px;
+      background: transparent;
+      transition: 0.3s;
+
+      @include desktop {
+        height: 36px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 140%;
+        color: $color_dark-500;
+        transition: 0.3s;
+      }
+
+      &:hover {
+        @include desktop {
+          background: rgba(1, 43, 38, 0.05);
+        }
+
+      }
+
+      &_selected, &_selected:hover {
+        background: $color_dark-1000;
+
+        p {
+          color: $color_light;
+        }
+      }
+    }
+  }
+
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+
+    @include desktop {
+      width: 164px;
+    }
+  }
+
+  .intervals {
+    margin-top: 8px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include desktop {
+      margin-top: 0;
+      margin-left: 8px;
+      width: 208px;
+    }
+
+  }
+
+}

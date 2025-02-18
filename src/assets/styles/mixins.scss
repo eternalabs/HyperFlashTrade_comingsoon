@@ -1,0 +1,83 @@
+//========= BREAK POINTS =========//
+@mixin desktop {
+  @media all and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onlyMobile($displayType: block) {
+  display: $displayType;
+  @content;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+@mixin onlyDesktop($displayType: block) {
+  display: none;
+
+  @include desktop {
+    display: $displayType;
+    @content;
+  }
+}
+
+//========= TEXT ===========//
+@mixin h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 140%;
+}
+
+//========= CONTAINERS ===========//
+@mixin container {
+  padding-left: 24px;
+  padding-right: 24px;
+
+
+  @include desktop {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@mixin inner() {
+  @include desktop() {
+    width: 1344px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin pagePaddings {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+@mixin borderWrapper {
+  border: 1px solid $color_line-80;
+  border-radius: 12px;
+  padding: 1px;
+}
+
+//========= OTHER =========//
+@mixin centerRow() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin centerColumn() {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button() {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}

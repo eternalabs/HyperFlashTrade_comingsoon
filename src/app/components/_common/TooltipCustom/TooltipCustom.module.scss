@@ -1,0 +1,31 @@
+@import "../../../../assets/styles/app";
+
+.tooltipCustom {
+  cursor: pointer;
+
+  .iconWrapper {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tooltip_mobile {
+    @include onlyMobile();
+    width: 16px;
+    height: 16px;
+  }
+
+  .tooltip_desktop {
+    @include onlyDesktop();
+    width: 16px;
+    height: 16px;
+  }
+
+
+}
+
+.tooltipContent {
+  background: $color_dark-1000;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(255,255,255,0.1);
+}

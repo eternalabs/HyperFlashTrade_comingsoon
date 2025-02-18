@@ -1,0 +1,36 @@
+@import "../../../../assets/styles/app";
+
+.waveText {
+  @include centerRow;
+
+  &_mobile {
+    @include onlyMobile(flex);
+  }
+
+  &_desktop {
+    @include onlyDesktop(flex);
+  }
+
+  &_inner {
+    position: relative;
+    overflow: hidden;
+
+    .text {
+      display: flex;
+
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(100%);
+      }
+
+      .empty {
+        width: 4px;
+      }
+
+
+    }
+  }
+
+}

@@ -1,0 +1,107 @@
+@import "../../../assets/styles/app";
+
+.points {
+  margin-top: 24px;
+
+  @include desktop {
+    margin-top: 16px;
+  }
+
+  .title {
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_dark-500;
+  }
+
+  .card {
+    margin-top: 16px;
+    background: $color_light;
+    border-radius: 16px;
+    padding: 0 8px 0 16px ;
+
+    .card_inner {
+      padding: 16px 8px 16px 0;
+
+      @include desktop {
+        height: calc(100vh - 584px);
+        overflow: auto;
+        scrollbar-color: $color_dark-1000 $color_line-80;
+        scrollbar-width: thin;
+      }
+
+      .row {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $color_line-80;
+      }
+
+      .group {
+
+        .groupTitle {
+
+          p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 140%;
+          }
+        }
+
+        .items {
+
+          .item {
+
+            & > div {
+              display: flex;
+              align-items: center;
+
+              p:nth-child(1) {
+                font-size: 14px;
+                line-height: 140%;
+                color: $color_dark-500;
+              }
+
+              .tooltip {
+                align-self: flex-start;
+                margin-left: 4px;
+              }
+            }
+
+            & > p {
+              font-size: 14px;
+              line-height: 140%;
+            }
+          }
+        }
+
+        &:last-child {
+          .items {
+            .item:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+.tooltipContent {
+  p:nth-child(1) {
+    font-weight: 400!important;
+    font-size: 14px!important;
+    line-height: 140%!important;
+    color: $color_light!important;
+  }
+
+  p:nth-child(2) {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_light-500;
+  }
+}

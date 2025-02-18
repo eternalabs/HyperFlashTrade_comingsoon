@@ -1,0 +1,360 @@
+@import "../../../assets/styles/app";
+
+.recentRounds {
+  margin-top: 16px;
+
+  @include desktop {
+    margin-top: 24px;
+  }
+
+  .content {
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 16px;
+    }
+
+    .validatorsList {
+      overflow: hidden;
+
+
+      @include desktop {
+        height: 184px;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 2;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 48px;
+          background: linear-gradient(0deg, rgba(240, 255, 245, 0.8) 0%, rgba(240, 255, 245, 0.0) 100%);
+          user-select: none;
+        }
+      }
+
+      .row {
+        height: 52px;
+        display: grid;
+        grid-template-columns: 1fr 1.0fr 0.5fr 0.8fr;
+        align-items: center;
+      }
+
+      .header {
+        padding: 0 16px;
+        border-bottom: 1px solid $color_line-80;
+
+        .header_inner {
+          p {
+            font-size: 14px;
+            line-height: 140%;
+            color: $color_dark-500;
+          }
+        }
+
+
+      }
+
+      .body {
+        padding: 0 16px;
+        position: relative;
+        z-index: 1;
+
+        .body_inner {
+
+          @include desktop {
+            height: 132px;
+            overflow: auto;
+            scrollbar-color: $color_dark-1000 $color_line-80;
+            scrollbar-width: thin;
+          }
+
+          .body_row {
+
+            &:not(:last-child) {
+              border-bottom: 1px solid $color_line-80;
+            }
+
+            & > div {
+              display: flex;
+              align-items: center;
+
+              &:nth-child(1) {
+
+                img {
+                  display: block;
+                  width: 16px;
+                  height: 16px;
+                }
+
+                p {
+                  margin-left: 8px;
+                  font-size: 14px;
+                  line-height: 140%;
+
+                  &:nth-child(2) {
+                    @include onlyMobile();
+                  }
+
+                  &:nth-child(3) {
+                    @include onlyDesktop();
+                  }
+                }
+              }
+
+              &:nth-child(2) {
+                p {
+                  font-size: 14px;
+                  line-height: 140%;
+                }
+              }
+
+              &:nth-child(3), &:nth-child(4) {
+                p {
+                  font-size: 14px;
+                  line-height: 140%;
+                  color: $color_dark-500;
+                }
+              }
+
+              &:nth-child(4) {
+                p:nth-child(1) {
+                  @include onlyMobile();
+                }
+
+                p:nth-child(2) {
+                  @include onlyDesktop();
+                }
+              }
+
+            }
+          }
+        }
+
+
+      }
+
+    }
+
+    .seeMoreBtn {
+      @include button;
+      @include onlyMobile();
+      margin-top: 24px;
+      width: 100%;
+
+      .button_inner {
+        width: 100%;
+        padding: 13px 0;
+      }
+    }
+
+    .card_second {
+      margin-top: 24px;
+      padding: 16px;
+
+      @include desktop {
+        margin-top: 0;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:not(:first-child) {
+          margin-top: 16px;
+        }
+
+        &:nth-child(3) {
+          svg {
+            path {
+              fill: #012B26;
+            }
+          }
+        }
+
+        & > div {
+          display: flex;
+          align-items: center;
+
+          & > div {
+            @include centerRow;
+            width: 40px;
+            height: 40px;
+            background: $color_dark-40;
+            border-radius: 50%;
+          }
+
+          & > p {
+            margin-left: 8px;
+            font-size: 14px;
+            line-height: 140%;
+            color: $color_dark-500;
+          }
+        }
+
+        & > p {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 140%;
+
+          @include desktop {
+            font-size: 24px;
+          }
+        }
+      }
+
+    }
+
+    .card_third {
+      margin-top: 16px;
+      padding: 16px;
+
+      @include desktop {
+        margin-top: 0;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:not(:first-child) {
+          margin-top: 16px;
+        }
+
+        &:nth-child(3) {
+
+          .progressBlock {
+            display: flex;
+            align-items: center;
+
+            & > p {
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 140%;
+              text-align: right;
+
+              @include desktop {
+                font-size: 24px;
+              }
+
+              &:nth-child(3) {
+                color: $color_dark-500;
+              }
+            }
+
+            .progress {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              margin: 0 8px;
+              width: 86px;
+
+              @include desktop {
+                width: 153px;
+              }
+
+              @include desktop {
+                margin: 0 16px;
+              }
+
+              .row {
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                  font-size: 12px;
+                  line-height: 140%;
+                  text-align: right;
+                  color: $color_dark-500;
+
+                  &:nth-child(2) {
+                    @include onlyMobile();
+                  }
+
+                  &:nth-child(3) {
+                    @include onlyDesktop();
+                  }
+                }
+              }
+
+              .line {
+                margin-top: 4px;
+                height: 4px;
+                background: $color_line-80;
+                border-radius: 999px;
+                overflow: hidden;
+
+                @include desktop {
+                  margin-top: 8px;
+                }
+
+                & > div {
+                  height: 100%;
+                  background: #61cbaf;
+                }
+              }
+            }
+
+
+          }
+
+        }
+
+        & > div:nth-child(1) {
+          display: flex;
+          align-items: center;
+
+          & > div {
+            @include centerRow;
+            width: 40px;
+            height: 40px;
+            background: $color_dark-40;
+            border-radius: 50%;
+          }
+
+          & > p {
+            margin-left: 8px;
+            font-size: 14px;
+            line-height: 140%;
+            color: $color_dark-500;
+          }
+        }
+
+        & > p {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 140%;
+
+          @include desktop {
+            font-size: 24px;
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+.block {
+  & > .label {
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_dark-500;
+  }
+
+  & > .content {
+    margin-top: 16px;
+
+    .card {
+      border-radius: 16px;
+      background: $color_light;
+    }
+  }
+}

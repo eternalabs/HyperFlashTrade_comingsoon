@@ -1,0 +1,162 @@
+@import "../../assets/styles/app";
+
+.stakers {
+  @include container;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 24px + 72px;
+  padding-bottom: 24px;
+  display: flex;
+
+  @include desktop {
+    padding-bottom: 40px;
+  }
+
+  .inner {
+    @include inner;
+    width: 100%;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .top {
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        align-self: flex-end;
+      }
+
+
+      .label {
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        border: 1px solid $color_dark-1000;
+        border-radius: 999px;
+        padding: 8px 16px;
+
+        p {
+          font-size: 14px;
+          line-height: 140%;
+        }
+
+        svg {
+          margin: 0 8px;
+        }
+
+
+      }
+
+      h1.title {
+        margin-top: 8px;
+        font-size: 40px;
+        line-height: 120%;
+
+        @include desktop {
+          font-size: 72px;
+          width: 688px;
+        }
+
+        span {
+          font-style: italic;
+        }
+      }
+
+      .description {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 140%;
+
+        @include desktop {
+          width: 324px;
+        }
+
+        span {
+          font-style: italic;
+        }
+      }
+
+    }
+
+    .bottom {
+      margin-top: 24px;
+
+      @include desktop {
+        margin-top: 0;
+        align-self: center;
+      }
+
+      .bottomLabel {
+        font-size: 14px;
+        line-height: 140%;
+        color: $color_dark-500;
+      }
+
+      .card {
+        margin-top: 16px;
+        border-radius: 16px;
+        background: $color_light;
+
+        @include desktop {
+          width: 437px;
+        }
+
+        .tabs {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          height: 60px;
+          border-bottom: 1px solid $color_line-80;
+
+          .tab {
+            @include button;
+            height: 100%;
+            @include centerRow;
+
+            &_selected {
+              border-bottom: 1px solid $color_dark-1000;
+            }
+
+            &:hover {
+              p:nth-child(1) {
+                color: $color_dark-1000;
+              }
+
+            }
+
+            .tabLabel {
+              font-size: 14px;
+              line-height: 140%;
+              color: $color_dark-500;
+              transition: 0.3s;
+
+              &_selected {
+                color: $color_dark-1000;
+              }
+            }
+
+            .info {
+              margin-left: 8px;
+              background: #aff9e5;
+              border-radius: 999px;
+              padding: 5px 8px;
+              font-size: 12px;
+              line-height: 140%;
+            }
+          }
+        }
+
+        .cardBody {
+          padding: 24px 16px;
+        }
+
+      }
+
+    }
+
+
+  }
+}

@@ -1,0 +1,137 @@
+@import "../../../assets/styles/app";
+
+.referals {
+
+  .title {
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_dark-500;
+  }
+
+  .card {
+    margin-top: 16px;
+    background: $color_light;
+    border-radius: 16px;
+    padding: 16px;
+
+    .label {
+      font-size: 14px;
+      line-height: 140%;
+      color: $color_dark-500;
+    }
+
+    .codeWrapper {
+      @include borderWrapper;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .code {
+        margin-left: 16px;
+        font-size: 14px;
+        line-height: 140%;
+        color: $color_dark-500;
+
+        &_mobile {
+          @include onlyMobile();
+        }
+
+        &_desktop {
+          @include onlyDesktop();
+        }
+      }
+
+
+
+      button {
+        @include button;
+        @include centerRow;
+        border-radius: 10px;
+        width: 44px;
+        height: 44px;
+        background: $color_dark-1000;
+
+        svg {
+
+        }
+      }
+
+
+    }
+
+    .generateBtn {
+      margin-top: 24px;
+      @include button;
+      display: block;
+      width: 100%;
+
+      &_inner {
+        width: 100%;
+        padding: 14px 0;
+      }
+    }
+
+    .row {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .topReferals {
+      margin-top: 8px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+
+        & > div {
+          display: flex;
+          align-items: center;
+
+          img {
+            display: block;
+            width: 16px;
+            height: 16px;
+          }
+
+          p {
+            margin-left: 8px;
+            font-size: 14px;
+            line-height: 140%;
+            color: $color_dark-500;
+          }
+        }
+
+        & > p {
+          font-size: 14px;
+          line-height: 140%;
+        }
+
+
+      }
+
+    }
+
+    .moreBtn {
+      @include button;
+      @include centerRow;
+      margin: 8px auto 0;
+      border: 1px solid $color_line-80;
+      border-radius: 8px;
+      width: 61px;
+      height: 28px;
+
+      p {
+        font-size: 12px;
+        line-height: 140%;
+      }
+    }
+
+  }
+}

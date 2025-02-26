@@ -1,0 +1,27 @@
+@import "../../assets/styles/app";
+
+.deFiGuidePage {
+  @include container;
+  position: relative;
+  width: 100%;
+  padding-top: 24px + 72px;
+  padding-bottom: 24px;
+
+  .inner {
+    @include inner;
+
+    h2.title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 140%;
+
+      @include desktop {
+        font-size: 24px;
+      }
+
+      span {
+        font-style: italic;
+      }
+    }
+  }
+}

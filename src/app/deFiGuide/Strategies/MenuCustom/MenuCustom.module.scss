@@ -1,0 +1,100 @@
+@import "../../../../assets/styles/app";
+
+.menuCustom {
+
+  .btn {
+    @include button;
+    @include centerRow;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: $color_light;
+    transition: 0.3s;
+
+    span {
+      font-size: 14px;
+      line-height: 140%;
+      color: $color_dark-500;
+      transition: 0.3s;
+    }
+
+    svg {
+      margin-left: 16px;
+      transition: 0.3s;
+
+      path {
+        stroke: $color_dark-500;
+        transition: 0.3s;
+      }
+    }
+
+    &_open {
+      background: $color_dark-1000;
+
+      span {
+        color: $color_light;
+      }
+
+      svg {
+        transform: rotate(-180deg);
+
+        path {
+          stroke: $color_light;
+        }
+      }
+    }
+
+
+
+  }
+}
+
+.categoryName {
+  height: 50px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color_light-80;
+
+  p {
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_light;
+  }
+}
+
+
+.listItem {
+  cursor: pointer;
+  height: 50px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border-bottom: 1px solid $color_light-80;
+  transition: 0.3s;
+
+  p {
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_light-500;
+  }
+
+  &:hover {
+    @include desktop {
+      background: rgba(240, 255, 245, 0.04);
+    }
+  }
+
+  &_selected {
+    background: rgba(240, 255, 245, 0.04);
+
+    p {
+      color: $color_light;
+    }
+
+    &:hover {
+      background: rgba(240, 255, 245, 0.04);
+    }
+  }
+}

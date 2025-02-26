@@ -1,0 +1,359 @@
+@import "../../../assets/styles/app";
+
+.allTheWays {
+  margin-top: 16px;
+
+  @include desktop {
+    margin-top: 24px;
+  }
+
+  .top {
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    & > p {
+      font-size: 14px;
+      line-height: 140%;
+      color: $color_dark-500;
+    }
+
+    .right {
+      margin-top: 24px;
+
+      @include desktop {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+      }
+
+      & > p {
+        font-size: 14px;
+        line-height: 140%;
+        color: $color_dark-500;
+      }
+
+      .btns {
+        margin-top: 24px;
+
+        @include desktop {
+          margin-top: 0;
+          margin-left: 24px;
+          display: flex;
+        }
+
+        .btn {
+          @include button;
+          @include centerRow;
+          box-shadow: 0 8px 10px 0 rgba(28, 54, 36, 0.04), inset 0 4px 6px 0 rgba(248, 255, 251, 0.2);
+          background: #e4ffea;
+          border: 1px solid rgba(209, 255, 242, 1);
+          border-radius: 12px;
+          height: 48px;
+          width: 100%;
+          transition: 0.3s;
+
+          @include desktop {
+            width: auto;
+            padding: 0 24px;
+          }
+
+          p {
+            margin-left: 8px;
+            font-size: 16px;
+            line-height: 140%;
+          }
+
+          &:hover {
+            @include desktop {
+              background: #c3ffee;
+            }
+          }
+
+          &:not(:first-child) {
+            margin-top: 8px;
+
+            @include desktop {
+              margin-top: 0;
+              margin-left: 8px;
+            }
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+  .cards {
+    margin-top: 24px;
+
+    @include desktop {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 16px;
+    }
+
+    .card {
+      border-radius: 16px;
+      background: $color_light;
+      padding: 16px;
+
+      &:not(:first-child) {
+        margin-top: 16px;
+
+        @include desktop {
+          margin-top: 0;
+        }
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+          display: flex;
+
+          .icon {
+            @include centerRow;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+            &:nth-child(1) {
+              background: $color_dark-40;
+            }
+
+            &:nth-child(2) {
+              background: $color_dark-1000;
+              position: relative;
+              left: -8px;
+
+              svg {
+                path {
+                  fill: #AFF9E5;
+                }
+              }
+            }
+          }
+        }
+
+        .tip {
+          @include centerRow;
+          border-radius: 999px;
+          width: 100px;
+          height: 28px;
+          background: #aff9e5;
+
+          p {
+            margin-left: 4px;
+            font-size: 12px;
+            line-height: 140%;
+          }
+        }
+
+
+      }
+
+      .cardTitle {
+        margin-top: 16px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: $color_dark-1000;
+
+        @include desktop {
+          font-size: 24px;
+        }
+      }
+
+      .items {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 24px;
+
+        .tooltip {
+          align-self: flex-start;
+          margin-left: 4px;
+        }
+
+        .tvl {
+
+          & > div {
+            display: flex;
+            align-items: center;
+
+            p {
+              font-size: 14px;
+              line-height: 140%;
+              color: $color_dark-500;
+            }
+          }
+
+          & > p {
+            margin-top: 8px;
+            font-size: 14px;
+            line-height: 140%;
+          }
+        }
+
+        .protocol {
+
+          & > div {
+            display: flex;
+            align-items: center;
+
+            &:nth-child(1) {
+              p {
+                font-size: 14px;
+                line-height: 140%;
+                color: $color_dark-500;
+              }
+            }
+
+            &:nth-child(2) {
+              margin-top: 8px;
+
+              p {
+                margin-left: 4px;
+                font-size: 14px;
+                line-height: 140%;
+              }
+
+            }
+
+          }
+        }
+
+        .strategy {
+          order: 3;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          & > div {
+            display: flex;
+
+            & > p {
+              font-size: 14px;
+              line-height: 140%;
+              color: $color_dark-500;
+            }
+          }
+
+          & > p {
+            margin-top: 8px;
+            padding: 5px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 140%;
+          }
+        }
+
+        .codeStatus {
+
+          & > div {
+            display: flex;
+
+            p {
+              font-size: 14px;
+              line-height: 140%;
+              color: $color_dark-500;
+            }
+
+            &:nth-child(2) {
+              margin-top: 8px;
+
+              svg:nth-child(2) {
+                margin-left: 8px;
+              }
+            }
+          }
+        }
+
+      }
+
+
+      &:nth-child(1) {
+        .items {
+
+          .strategy > p {
+            background: rgba(239, 0, 191, 0.1);
+            color: #ef00bf;
+          }
+
+          .codeStatus {
+            order: 4;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .items {
+          .strategy > p {
+            background: rgba(0, 159, 239, 0.1);
+            color: #009fef;
+          }
+
+          .codeStatus {
+            order: 4;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        .items {
+          .strategy > p {
+            background: rgba(239, 163, 0, 0.1);
+            color: #efa300;
+          }
+
+          .codeStatus {
+            order: 4;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        .items {
+          .strategy > p {
+            background: rgba(97, 203, 175, 0.1);
+            color: #61cbaf;
+          }
+
+          .codeStatus {
+            order: 2;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.tooltipContent {
+  p:nth-child(1) {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 140% !important;
+    color: $color_light !important;
+  }
+
+  p:nth-child(2) {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $color_light-500;
+  }
+}
+

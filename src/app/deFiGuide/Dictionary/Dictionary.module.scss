@@ -1,0 +1,99 @@
+@import "../../../assets/styles/app";
+
+.dictionary {
+  margin-top: 32px;
+
+  @include desktop {
+    margin-top: 48px;
+  }
+
+  h3.title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+
+    @include desktop {
+      font-size: 24px;
+    }
+  }
+
+  .items {
+    margin-top: 16px;
+
+    @include desktop {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 16px;
+    }
+
+    .item {
+      position: relative;
+      border-radius: 16px;
+      background: $color_light;
+      padding: 16px;
+
+      @include desktop {
+        height: 252px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 16px;
+
+        @include desktop {
+          margin-top: 0;
+        }
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          @include centerRow;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          background: $color_dark-40;
+        }
+
+        .cardTitle {
+          margin-left: 8px;
+          font-size: 14px;
+          line-height: 140%;
+        }
+      }
+
+      .text {
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 140%;
+        color: $color_dark-500;
+      }
+
+      .moreBtn {
+        @include button;
+        display: block;
+        margin-top: 16px;
+        margin-left: auto;
+        padding: 5px 16px;
+        border: 1px solid $color_line-80;
+        border-radius: 8px;
+
+        @include desktop {
+          position: absolute;
+          margin: 0;
+          bottom: 16px;
+          right: 16px;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 140%;
+        }
+
+      }
+
+    }
+  }
+}

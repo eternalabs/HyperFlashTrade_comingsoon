@@ -4,8 +4,6 @@ import {RecentRounds} from "./RecentRounds/RecentRounds";
 import {Validators} from "./Validators/Validators";
 import {Metrics} from "./Metrics/Metrics";
 
-
-
 export const ValidatorComponent = () => {
 
     return (

@@ -1,0 +1,121 @@
+@import "../../../assets/styles/app";
+
+.twoBlocks {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+
+  @include desktop {
+    grid-template-rows: unset;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .block {
+    @include centerRow;
+
+    &:nth-child(1) {
+      background: $color_dark-1000;
+      overflow: hidden;
+
+      .iconWrapper {
+        position: relative;
+        width: 149px;
+        height: 155px;
+
+        @include desktop {
+          width: 431px;
+          height: 450px;
+        }
+
+        svg {
+          position: relative;
+          z-index: 2;
+          width: 149px;
+          height: 155px;
+
+          @include desktop {
+            width: 431px;
+            height: 450px;
+          }
+        }
+
+        & > div {
+          background: #143c37;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .vertical {
+          height: 200vh;
+          width: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+
+          &_left {
+            left: 0;
+          }
+
+          &_right {
+            right: 0;
+          }
+        }
+
+        .horizontal {
+          width: 200vh;
+          height: 1px;
+          left: 50%;
+          transform: translateX(-50%);
+
+          &_top {
+            top: 0;
+          }
+
+          &_bottom {
+            bottom: 0;
+          }
+        }
+
+        .angle {
+          width: 200vh;
+          height: 1px;
+          left: 50%;
+          transform: translateX(-50%) rotate(-45deg) ;
+
+          &_top {
+            top: 0;
+          }
+
+          &_bottom {
+            bottom: -5px;
+
+            @include desktop {
+              bottom: -13px;
+            }
+          }
+
+        }
+      }
+
+    }
+
+    &:nth-child(2) {
+      background: radial-gradient(140.09% 104.07% at 1.15% 0%, rgb(243, 252, 231) 6.706345081329346%, rgb(175, 249, 229) 100%);
+
+      svg {
+        width: 230px;
+        height: 146px;
+
+        @include desktop {
+          width: 418px;
+          height: 264px;
+        }
+      }
+
+    }
+
+
+  }
+
+
+}

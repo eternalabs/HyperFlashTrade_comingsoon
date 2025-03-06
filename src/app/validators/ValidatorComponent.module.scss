@@ -7,6 +7,10 @@
   padding-top: 24px + 72px;
   padding-bottom: 24px;
 
+  @include desktop {
+    height: 100vh;
+  }
+
   .inner {
     @include inner;
 

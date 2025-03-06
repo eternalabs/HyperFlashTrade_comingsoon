@@ -1,0 +1,94 @@
+@import "../../../assets/styles/app";
+
+.visualization {
+  margin-top: -2px;
+  @include container;
+  background: $color_dark-1000;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include desktop {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .inner {
+    @include inner;
+
+    .title {
+      font-size: 24px;
+      line-height: 120%;
+      color: $color_light;
+
+      @include desktop {
+        font-size: 48px;
+      }
+    }
+
+    .cards {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      //align-items: center;
+
+      @include desktop {
+        margin-top: 112px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 45px;
+      }
+
+      .waterAnimation {
+        position: absolute;
+        z-index: 1;
+        width: 280px;
+        height: 280px;
+
+        @include desktop {
+          height: 540px;
+          width: 540px;
+        }
+
+        &_top {
+          top: 0;
+          left: 0;
+          transform: translate(-40%, -40%);
+        }
+
+        &_bottom {
+          top: auto;
+          bottom: 0;
+          left: 100%;
+          transform: translate(-60%, 40%);
+        }
+      }
+
+      .logoWrapper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 173px;
+        height: 110px;
+
+        @include desktop {
+          width: 295px;
+          height: 186px;
+        }
+
+        svg {
+          width: 173px;
+          height: 110px;
+
+          @include desktop {
+            width: 295px;
+            height: 186px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -14,7 +14,7 @@ export const App =({children}: Readonly<{ children: React.ReactNode }>) => {
         <StakeModal/>
         <UnstakeModal/>
 
-        <Header/>
+        {/*<Header/>*/}
 
         <main>
             {children}

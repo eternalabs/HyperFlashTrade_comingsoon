@@ -1,0 +1,101 @@
+@import "../../../assets/styles/app";
+
+.appIcon {
+  margin-top: -1px;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+
+  @include desktop {
+    grid-template-rows: unset;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .top {
+    background: $color_dark-1000;
+    padding-left: 24px;
+    padding-right: 32px;
+
+    @include desktop {
+      padding-left: calc(0.5 * (100vw - 1344px));
+      padding-right: 0;
+    }
+
+    .top_inner {
+      position: relative;
+      height: 100%;
+      padding-top: 32px;
+      padding-bottom: 32px;
+
+      @include desktop {
+        padding-top: 64px;
+        padding-bottom: 64px;
+      }
+
+      .title {
+        font-size: 24px;
+        line-height: 120%;
+        color: $color_light;
+
+        @include desktop {
+          font-size: 48px;
+        }
+      }
+
+      .iconWrapper {
+        @include centerRow;
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+        background: #aff9e5;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        @include desktop {
+          border-radius: 48px;
+          width: 218px;
+          height: 218px;
+        }
+
+        svg {
+          width: 45px;
+          height: 45px;
+
+          @include desktop {
+            width: 120px;
+            height: 120px;
+          }
+        }
+      }
+
+
+
+    }
+
+
+
+  }
+
+  .bottom {
+    position: relative;
+    background: radial-gradient(140.09% 104.07% at 1.15% 0%, #f3fce7 6.71%, #aff9e5 100%);
+
+    img {
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 247px;
+      height: auto;
+
+      @include desktop {
+        width: (1440 / 1920) * 660px;
+      }
+    }
+  }
+
+
+}

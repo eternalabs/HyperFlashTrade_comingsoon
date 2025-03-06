@@ -8,4 +8,5 @@ export const manrope = Manrope({
 export const playfair_Display = Playfair_Display({
     subsets: ['latin'],
     display: 'swap',
+    style: ['italic']
 })

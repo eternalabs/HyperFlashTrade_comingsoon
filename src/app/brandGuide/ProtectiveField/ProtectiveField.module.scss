@@ -1,0 +1,61 @@
+@import "../../../assets/styles/app";
+
+.protectiveField {
+  @include container;
+  background: radial-gradient(140.09% 104.07% at 1.15% 0%, #f3fce7 6.71%, #aff9e5 100%);
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include desktop {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+
+  .inner {
+    @include inner;
+
+    .title {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+
+      @include desktop {
+        font-size: 48px;
+      }
+    }
+
+    .text {
+      margin-top: 24px;
+      font-size: 16px;
+      line-height: 140%;
+      color: $color_dark-500;
+
+      @include desktop {
+        margin-top: 64px;
+        font-size: 24px;
+      }
+    }
+
+    svg {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 32px;
+      width: 312px;
+      height: 105px;
+
+      @include desktop {
+        margin-top: 100px;
+        margin-left: unset;
+        margin-right: unset;
+        width: 1344px;
+        height: 1344px * (579 / 1720);
+      }
+    }
+
+
+  }
+
+}

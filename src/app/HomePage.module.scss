@@ -15,17 +15,16 @@
   .waterAnimation {
     position: absolute;
     z-index: 1;
-    top: calc(96px + 0.5 * Min(calc(100vw - 32px), calc(100vh - (72px + 94px + 16px + 230px + 24px))));
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: Min(calc(100vw - 48px), calc(100vh - (72px + 94px + 16px + 230px + 24px)));
-    height: Min(calc(100vw - 48px), calc(100vh - (72px + 94px + 16px + 230px + 24px)));
+    width: Min(calc(100vw - 48px), 500px);
+    height: Min(calc(100vw - 48px), 500px);
+    opacity: 0.5;
 
     @include desktop {
       width: 640px;
       height: 640px;
-      top: 50%;
-      transform: translate(-50%, -50%);
     }
   }
 
@@ -36,156 +35,59 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 96px);
+
+    @include desktop {
+      min-height: calc(100vh - 72px);
+    }
 
     .topWrapper {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-
-      .label {
-        display: flex;
-        align-items: center;
-        border: 1px solid $color_dark-1000;
-        border-radius: 999px;
-        padding: 8px 16px;
-
-        p {
-          font-size: 14px;
-          line-height: 140%;
-        }
-
-        svg {
-          margin: 0 8px;
-        }
-      }
+      align-items: center;
+      text-align: center;
 
       h1.title {
-        margin-top: 8px;
-
-        @include desktop {
-          width: 680px;
-        }
+        margin-top: 0;
 
         span {
           display: inline-block;
-          font-size: 40px;
+          font-size: 48px;
           line-height: 120%;
 
           @include desktop {
-            font-size: 72px;
+            font-size: 96px;
           }
 
           &:last-child {
-            margin-left: 8px;
+            margin-left: 12px;
 
             @include desktop {
-              margin-left: 18px;
+              margin-left: 24px;
             }
           }
-
-
         }
 
         .italic {
           font-style: italic;
         }
       }
-    }
 
-    .bottomWrapper {
-      margin-top: 16px;
-
-      @include desktop {
-        margin-top: -18px;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: flex-end;
-      }
-
-      .items {
-        margin-top: 16px;
-        display: flex;
-        justify-content: space-between;
+      .quote {
+        margin-top: 32px;
+        font-size: 18px;
+        line-height: 160%;
+        color: $color_dark-500;
+        font-style: italic;
 
         @include desktop {
-          margin-top: 0;
-          width: 422px;
-        }
-
-        .item {
-
-          & > div {
-            display: flex;
-            align-items: center;
-
-            & > div {
-              @include centerRow;
-              background: $color_dark-40;
-              border-radius: 50%;
-              width: 40px;
-              height: 40px;
-            }
-
-            & > p {
-              margin-left: 8px;
-              font-size: 14px;
-              line-height: 140%;
-              color: $color_dark-500;
-            }
-          }
-
-          & > p {
-            margin-top: 16px;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 140%;
-
-            @include desktop {
-              font-size: 24px;
-            }
-          }
-
+          margin-top: 40px;
+          font-size: 28px;
+          max-width: 700px;
         }
       }
-
-      .buttons {
-        margin-top: 24px;
-        display: flex;
-        flex-direction: column;
-
-        @include desktop {
-          margin-top: 0;
-          flex-direction: row;
-        }
-
-        .link {
-          display: block;
-          text-decoration: none;
-
-          &:not(:first-child) {
-            margin-top: 8px;
-
-            @include desktop {
-              margin-top: 0;
-              margin-left: 8px;
-            }
-          }
-
-          .link_inner {
-            padding: 13px 0;
-
-            @include desktop {
-              padding: 13px 24px;
-            }
-
-          }
-        }
-
-      }
-
-
     }
 
 

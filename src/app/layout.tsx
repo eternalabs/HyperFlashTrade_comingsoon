@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import React from "react";
-import {AppContainer} from "./components/A0_App/AppContainer";
+import {App} from "./components/A0_App/App";
 export const metadata: Metadata = {
     title: "HyperFlash",
     description: "Mev Powered Staking Rewards",
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
     return (
             <html lang="en">
-                <AppContainer>
+                <App>
                     {children}
-                </AppContainer>
+                </App>
             </html>
 
     );

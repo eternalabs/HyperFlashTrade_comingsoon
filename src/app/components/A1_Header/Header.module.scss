@@ -2,7 +2,6 @@
 
 .headerWrapper {
   position: absolute;
-  //z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,7 +11,6 @@
   .header {
     @include container;
     position: relative;
-    //height: 100%;
     height: 72px;
     z-index: 999;
 
@@ -22,151 +20,24 @@
       height: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
 
       .logo {
         text-decoration: none;
 
         p {
-          font-size: 18px;
+          font-size: 24px;
           line-height: 140%;
+
+          @include desktop {
+            font-size: 32px;
+          }
 
           span {
             font-style: italic;
           }
         }
       }
-
-      .centerWrapper {
-        @include onlyDesktop(flex);
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        .link {
-          text-decoration: none;
-
-          &:not(:first-child) {
-            margin-left: 24px;
-          }
-
-          .text {
-
-            p {
-              font-size: 14px;
-              line-height: 140%;
-              color: $color_dark-500;
-            }
-
-
-            &_selected {
-
-              p {
-                color: $color_dark-1000;
-              }
-
-            }
-
-          }
-        }
-      }
-
-      .rightWrapper {
-        display: flex;
-        align-items: center;
-
-        .button {
-          @include onlyDesktop();
-          @include button;
-
-          .button_inner {
-            padding: 10px 16px;
-          }
-        }
-
-        .iconButton {
-          @include button();
-          @include centerRow;
-          text-decoration: none;
-          border-radius: 10px;
-          width: 40px;
-          height: 40px;
-          box-shadow: 0 8px 10px 0 rgba(28, 54, 36, 0.04), inset 0 4px 6px 0 rgba(248, 255, 251, 0.2);
-          background: linear-gradient(180deg, #e4ffea 0%, #b3f9e5 100%);
-        }
-
-        .item {
-          &:not(:first-child) {
-            margin-left: 8px;
-          }
-        }
-
-        .burger {
-          @include onlyMobile(flex);
-        }
-      }
-
     }
-  }
-
-  .menu {
-    @include onlyMobile();
-    position: fixed;
-    z-index: 998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    //background-color: green;
-    background: radial-gradient(140.09% 104.07% at 1.15% 0%, #f3fce7 6.71%, #aff9e5 100%);
-    padding-top: 8px + 72px;
-    transform: translateX(101%);
-    transition: 0.3s;
-
-    &_open {
-      transform: translateX(0);
-    }
-
-    .links {
-
-      .link {
-        display: block;
-        text-decoration: none;
-        padding: 16px 24px;
-        border-bottom: 1px solid $color_line-80;
-
-        p {
-          font-size: 14px;
-          line-height: 140%;
-          color: $color_dark-500;
-        }
-
-      }
-
-    }
-
-    .buttons {
-      margin-top: 24px;
-      padding-left: 24px;
-      padding-right: 24px;
-
-      .button {
-        @include button;
-        display: block;
-        width: 100%;
-
-        &:not(:first-child) {
-          margin-top: 8px;
-        }
-
-        .button_inner {
-          padding: 13px 0;
-        }
-      }
-    }
-
   }
 }

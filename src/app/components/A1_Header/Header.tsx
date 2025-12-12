@@ -17,7 +17,7 @@ export const Header = () => {
                           href="/"
                     >
                         <p>
-                            Hyper<span className={playfair_Display.className}>Flash</span>
+                            Hyper<span className={playfair_Display.className}>Flash</span>Trade
                         </p>
                     </Link>
 

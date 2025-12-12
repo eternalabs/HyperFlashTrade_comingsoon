@@ -3,7 +3,7 @@ import "./globals.css";
 import React from "react";
 import {App} from "./components/A0_App/App";
 export const metadata: Metadata = {
-    title: "HyperFlash",
+    title: "HyperFlashTrade",
     description: "Mev Powered Staking Rewards",
 };
 

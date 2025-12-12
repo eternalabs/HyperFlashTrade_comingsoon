@@ -3,8 +3,18 @@ import "./globals.css";
 import React from "react";
 import {App} from "./components/A0_App/App";
 export const metadata: Metadata = {
-    title: "HyperFlashTrade",
+    title: {
+        default: "HyperFlashTrade",
+        template: "%s | HyperFlashTrade"
+    },
     description: "Mev Powered Staking Rewards",
+    icons: {
+        icon: [
+            { url: '/icon.png', sizes: 'any' },
+            { url: '/favicon.ico', sizes: 'any' }
+        ],
+        apple: '/icon.png',
+    },
 };
 
 

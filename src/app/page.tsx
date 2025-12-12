@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {Home} from "./Home";
 
 export const metadata: Metadata = {
-    title: "HyperFlash - Home",
+    title: "HyperFlashTrade",
     description: "Mev Powered Staking Rewards",
 };
 
